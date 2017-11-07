@@ -1,0 +1,49 @@
+﻿@model IEnumerable<Midbay_NG.MyModels.Gallery>
+
+@{
+    ViewBag.Title = "Gallery";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<h2>Gallery</h2>
+
+<p>
+    @Html.ActionLink("Create New", "AddGallery")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.image)
+        </th>
+        
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.name)
+        </td>
+        <td>
+
+            <img src="~/Uploads/Images/@item.filename" width="100" />
+        </td>
+        <td> 
+            @Html.DisplayFor(modelItem => item.date)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditGallery", new { id = item.Id })
+            @Html.ActionLink("Delete", "DeleteGallery", new { id=item.Id })
+        </td>
+    </tr>
+   
+}
+
+</table>
+
+
+
+

@@ -1,0 +1,129 @@
+﻿@model Midbay_NG.MyModels.Project
+
+@{
+    ViewBag.Title = "ViewProject";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container projector">
+    <div class=" row" style="padding:20px;">
+      <div class="col-md-8">
+          <div class="title" style="margin-top:100px;">
+              <center>
+                  <h4>@Model.Name</h4>
+              </center>
+          </div>
+          <div>          
+             
+           
+              
+                  <img id="mainImage" class="img-responsive" src="~/Uploads/ProjectImages/@Model.Images.Split(',').First().Substring(Model.Images.Split(',').First().LastIndexOf('\\') +1)" style="width:100%;" />
+                  <hr />
+                 
+                  <div class="row " style="background-color:; padding:0;">
+                      <center>
+                          @foreach (var t in Model.Images.Split(','))
+                          {
+
+                              <div class="col-md-3">
+                                  <img class="subImage" src="~/Uploads/ProjectImages/@t.Substring(t.LastIndexOf('\\') +1)" style="height:100px; width:100%"/>
+                              </div>
+
+
+                          }
+                      </center>
+                  </div>
+              <br />
+              <hr />
+              <div class="ProjectDetails">
+                  <div class="row">
+                      <div class="col-md-2 col-md-offset-1">
+                          Client:
+                      </div>
+                      <div class="col-md-5">
+                          @Model.Client
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-md-2 col-md-offset-1">
+                          Location:
+                      </div>
+                      <div class="col-md-5">
+                          @Model.Location
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-md-2 col-md-offset-1">
+                          Date:
+                      </div>
+                      <div class="col-md-5">
+                          @Model.Date
+                      </div>
+                  </div>
+                
+              </div>
+            <div class="projectdesc">
+                <div class="row">
+                   
+                    <div class="col-md-8 col-md-offset-1">
+                        @Model.Description
+                    </div>
+                </div>
+            </div>
+             
+
+          </div>
+          <p>
+            
+          </p>
+      </div>
+        <div class="col-md-4">
+            <div class="title" style="margin-top:100px;">
+                <center>
+                    <h4>Related Projects</h4>
+                </center>
+            </div>
+            @foreach (Midbay_NG.MyModels.Project t in ViewBag.projects)
+            {
+                if (t.Id != Model.Id)
+                {
+                    <div class="col-md-12">
+                        <a href=@Url.Action("ViewProject", new { Id = t.Id })>
+                            <img class="img-rounded img-responsive related" src="~/Uploads/ProjectImages/@t.Images.Split(',').First().Substring(t.Images.Split(',').First().LastIndexOf('\\') + 1)" />
+                        </a>
+
+                        <div>
+                            &nbsp; @t.Name
+                        </div>
+                    </div><hr />
+                }
+
+
+
+            }
+        </div>
+    </div>
+  
+</div>
+<script type="text/javascript">
+    var x;
+    var height;
+    $('.subImage').click(   
+        function () {
+            $('.selectedImage').removeClass("selectedImage");
+            $(this).addClass("selectedImage");
+            x = $(this).attr("src");
+        
+           
+           
+          height=  $('#mainImage').height();
+            $('#mainImage').fadeOut(300, function () {
+                $(this).height(height);
+                $(this).attr("src", x).fadeIn(300, function () {
+                  
+                   
+                });
+            });
+        
+        });
+</script>

@@ -1,0 +1,105 @@
+﻿@model IEnumerable<Midbay_NG.MyModels.Project>
+
+@{
+    ViewBag.Title = "Projects";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+
+<p>
+    @Html.ActionLink("Add Project", "AddProject")
+</p>
+       
+
+<hr />
+<div class="row header2 well">
+    <div class="col-md-2">
+        Project name
+    </div>
+    <div class="col-md-2">
+        Client
+    </div>
+    <div class="col-md-2">
+        Location
+    </div>
+    <div class="col-md-3">
+        Description
+    </div>
+    <div class="col-md-2">
+       
+    </div>
+</div><hr />
+    @foreach (var item in Model)
+    {
+        <div class="row header2 effect-containter">
+            <div class="displayed" style="border-bottom:1px dotted black">
+                <div class="col-md-2">
+                    @item.Name
+                </div>
+                <div class="col-md-2">
+                    @item.Client
+                </div>
+                <div class="col-md-2">
+                    @item.Location
+                </div>
+                <div class="col-md-3">
+                    @item.Description
+                </div>
+                <div class="col-md-2">
+                 <div class="pull-right">
+                     <a href=@Url.Action("DeleteProject", new { Id=item.Id})>Delete</a> |
+                     <a href=@Url.Action("EditProject", new {Id = item.Id })>Edit</a> |
+                     <a class="details" href="#">Details</a>
+                 </div>
+
+                </div>
+            </div>
+
+            <div class="row overlayed">
+               @if (item.Images != "")
+               {
+                foreach (var t in item.Images.Split(','))
+                {
+                    <div class=" col-md-3 col-lg-2">
+                        <img src="~/Uploads/ProjectImages/@t.Substring(t.LastIndexOf('\\') + 1)" class="img-responsive" style="height:100px;" />
+                    
+                    </div>
+                }
+               }
+            </div>
+        </div>
+
+    }
+
+   
+
+
+
+
+
+<script type="text/javascript">
+    $('.details').click(function () {
+        $('.overlayed').removeClass("hovered");
+        $(this).parent().parent().parent().siblings().addClass('hovered').mouseleave(function () {
+            $(this).removeClass("hovered");
+        });
+      
+        
+       
+    });
+
+    $(".delmg").click(function () {
+      
+        var current = $(this);
+        var img = $(this).siblings().filter('p').text();
+        var Ids = $(this).siblings().filter('b').text();
+       
+         
+        $.get('/Admin/DeletePI/',{image:img,Id: Ids} ,function (data) {
+         
+            current.parent().remove();
+        });
+     
+    });
+</script>
+

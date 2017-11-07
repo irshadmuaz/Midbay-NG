@@ -1,0 +1,29 @@
+﻿@model Midbay_NG.MyModels.Gallery
+
+@{
+    ViewBag.Title = "Gallery";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div class="container"style="background-color:white">
+   <br />
+    <div class="row">
+       
+
+            <img style="margin:0 auto; margin-top:200px;" class="img-responsive" src="~/Uploads/Images/@Model.filename" />
+        
+    </div>
+    
+    
+    <br />
+    <div class="row">
+        <p class="text-center" style="margin:0 auto;">
+            <h4 class="text-center" style="margin-top:50px;">@Model.name</h4><br />
+           <a class="btn btn-danger" style="margin-left:50px;" href=@Url.Action("Gallery")>Back</a>
+        </p>
+    </div>
+    
+</div>
+

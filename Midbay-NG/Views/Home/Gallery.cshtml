@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Midbay_NG.MyModels.Gallery>
+
+@{
+    ViewBag.Title = "Gallery";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container gallery">
+    <div class="gallery-header">
+        <img class="img-responsive" src="~/Images/Gallery.jpg" />
+    </div>
+    
+    <div class="gallery-content">
+        @foreach (var item in Model)
+            {
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 gallery-content">
+                <img class="image1 img-rounded" src="~/Uploads/Images/@item.filename" />
+                <p class="alert alert-success pull-left" style="width:100%; background-color:black">
+                    <text class="pull-left">@item.name</text>
+                <a href=@Url.Action("ViewGallery", new { Id=item.Id}) class="pull-right btn btn-primary"><span class="glyphicon glyphicon-eye-open"></span> View</a>
+                </p>
+
+            </div>
+        }
+    </div>
+   
+
+</div>
+
+
+    @*<div class="container gallery-row" style="background-color:blue;float:left;">
+        <div class="row gallery pull-left">
+
+           
+        </div>
+        <div class="row gallery-content ">
+
+            @foreach (var item in Model)
+            {
+                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 pull-left shifters">
+                    <img class="image1"src="~/Uploads/Images/@item.filename" />
+                    <p class="textcenter">@item.name</p>
+
+                </div>
+            }
+
+        </div>
+    </div>*@
+
+
+
+
+
+
+

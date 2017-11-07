@@ -1,0 +1,20 @@
+﻿@model IEnumerable<Midbay_NG.MyModels.Consultant>
+@{
+    ViewBag.Title = "Affiliates";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container">
+    <div id="consultant_main">
+        @foreach (var t in Model)
+        {
+            <div class=" row econsultant">
+                <h3>@t.Name</h3>
+                <img class="" style="width:240px; float:left; display:block; height:160px;padding:0 20px 20px 20px; margin-left:20px;" src="~/Consultants/@t.Image.Substring(t.Image.LastIndexOf('\\') + 1)" />
+                @t.Description
+        </div>
+        }
+
+    </div>
+</div>

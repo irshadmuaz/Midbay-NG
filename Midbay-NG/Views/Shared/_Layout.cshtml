@@ -1,0 +1,141 @@
+﻿<!DOCTYPE html>
+<html class="reset">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title -Nigeria Limited</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/MyScripts/jquery.easing.1.3.js"></script>
+    <script src="~/MyScripts/modernizr.2.5.3.min.js"></script>
+    <link href="~/MyStyles/css.css" rel="stylesheet" />
+    <script src="~/MyScripts/ImageUpload.js"></script>
+    <script src="~/MyScripts/MyScript.js"></script>
+    <script src="~/MyScripts/3dEffect.js"></script>
+</head>
+<body class="reset">
+    <div class="head1">
+        <div class="container">
+            <div class="pull-left">
+                @*<img src="~/Images/banner.png" />*@
+                <img class="pull-left" src="~/Images/Midbay-logo.png" height="100" />
+                <div class="motto visible-lg"><h4>We Engineer a habitat for humanity</h4></div>
+            </div>
+            <div class= "pull-right" id="listhead">
+                <ul class="banner-content pull-right">
+                    <li><a href=@Url.Action("Index")>HOME</a></li>
+                    <li><a href=@Url.Action("About")>ABOUT</a></li>
+
+                    <li><a href=@Url.Action("Gallery")>GALLERY</a></li>
+                  <li><a href=@Url.Action("Gallery","Admin")>Admin</a></li>
+                    <li><a href=@Url.Action("Contact")>CONTACT</a></li>
+                  
+                    <li><a href=@Url.Action("Affiliates")>AFFILIATIONS</a></li>
+                </ul>
+            </div>
+           <div id="navcont"class="pull-right" >
+               <button class="pull-right" id="toggler">
+                    <i class="fa fa-bars"></i>
+               </button>
+               <div id="navlist">
+                   <i class="fa fa-close"></i>
+                   <ul class="nav nav-pills nav-justified" role="tablist">
+                       <li><a href=@Url.Action("Index")>HOME</a></li>
+                       <li><a href=@Url.Action("About")>ABOUT</a></li>
+
+                       <li><a href=@Url.Action("Gallery")>GALLERY</a></li>
+                       <li><a href=@Url.Action("Gallery","Admin")>Admin</a></li>
+                       <li><a href=@Url.Action("Contact")>CONTACT</a></li>
+
+                       <li><a href=@Url.Action("Affiliates")>AFFILIATIONS</a></li>
+                   </ul>
+               </div>
+           </div>
+        </div>
+
+    </div>
+    
+    <div class="side1" style="margin-top:100px;">
+        @RenderBody()
+       
+        @*<footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>*@
+    </div>
+    <div class="row side1 reset">
+       <div class="container" style="padding:0">
+           <div class="col-md-4 reset">
+               <div class="footer1" style="border:none">
+                   <div class="footer-content">
+                       <h4>
+                           FOR ORDER AND INQUIRIES PLEASE CALL:
+                         
+                       </h4><hr />
+
+                       <h3><img src="~/Images/09.call.png" width="90" height="90" />
+                       <b style="font-weight:bold"> 080-388-94389</b>
+                       </h3>
+                      
+                       <h4>
+                           OR EMAIL US AT:
+                          
+                       </h4>
+                       <h4><img src="~/Images/E-mail.png" width="90" height="90" />&nbsp;
+                       <b style="font-weight:bold"> engrsaf184@gmail.com</b>
+                       </h4>
+                   </div>
+                  
+               </div>
+
+           </div>
+           <div class="col-md-4 reset">
+               <div class="footer1">
+                   <div class="footer-content">
+                       <h4 class="text-center">
+                          LINKS
+
+                       </h4><hr />
+                       <img class="pull-left" src="~/Images/10.wireless.png" />
+                           <ul class="footer-list pull-left">
+                               <li><a href="#">HOME</a></li>
+                               <li><a href="#">ABOUT</a></li>
+                               <li><a href="#">GALLERY</a></li>
+                               <li><a href="#">CONTACT</a></li>
+                           </ul>                                                                  
+                   </div>
+                            
+                   <div id="social" style="margin-left:40px; margin-top:20px; float:left;">
+                     
+                       <img style="margin-left:0;" src="~/Images/Facebook.png" />
+                       <img src="~/Images/GooglePlus.png" />
+                       <img src="~/Images/Twitter.png" />
+                   </div>
+               </div>
+           </div>
+           <div class="col-md-4 reset">
+               <div class="footer1">
+                   <div class="footer-content">
+                       <h4 class="text-center">
+                           Comments from our clients
+                       </h4><hr />                 
+                       <ul class="footer-list pull-left">
+                           <li><a href="#">MID-BAY is a startup, but one that promises to acheive great things</a></li>
+                           <li><a href="#">They are flexible and quite affordable</a></li>
+                           <li><a href="#">Experienced and inspirational</a></li>
+                           <li><a href="#">They get the task done</a></li>
+                       </ul>
+                   </div>
+               </div>
+           </div>
+       </div>
+
+    </div>
+   
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

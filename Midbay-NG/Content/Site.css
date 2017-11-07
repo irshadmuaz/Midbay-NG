@@ -1,0 +1,88 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+#toggler
+{
+    position:relative;
+    padding:15px;
+    padding:15px 30px 15px 30px;
+    margin-top:25px;
+    margin-right:25px;
+    border-radius:20px;
+    background-color:black;
+    color:white;
+    z-index:1;
+    
+}
+#toggler:hover{
+    background-color:#4f3737;
+}
+#navcont{
+    position:absolute;
+    right:0;
+    display:none;
+}
+#navlist{
+    position:relative;
+    background-color:#3c190a;
+    opacity:0.9;
+    width:0;
+    overflow:hidden;
+    margin-top:25px;
+    
+    
+}
+#navlist i{
+    position:absolute;
+    color:wheat;
+    right:5px;
+    top:5px;
+}
+#navlist i:hover{
+    color:white;
+    border:2px;
+}
+#navlist ul{
+
+    list-style-type:none;
+    opacity:1;
+    margin-top:30px;
+    margin-right:50px;
+    padding:10px;
+    color:whitesmoke;
+    
+    
+    
+}
+@media only screen and (max-width:1060px)
+{
+    #navcont
+    {
+        display:block;
+        
+    }
+    #listhead{
+        display:none;
+    }
+}

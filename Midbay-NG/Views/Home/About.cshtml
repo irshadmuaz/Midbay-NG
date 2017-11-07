@@ -1,0 +1,100 @@
+﻿@{
+    ViewBag.Title = "About";
+}
+
+<div class="row" style="background-image: url('../Images/128-199.jpg');">
+    <div id="about-container" class="container" style="padding:0;">
+       
+        <img class="img-responsive img-rounded" src="~/Images/About-image.jpg" width="1280" height="720"/>
+        <div class="row reset" style="background-color:white;">
+            <div class="col-md-5 col-md-offset-1">
+                <br />
+                <h2>What are we?</h2><hr />
+                <br />
+                <p class="font2">
+                    MID-BAY Is an Africa-indigenous Building and Civil Engineering
+                    Construction Company, Incorporated under the Companies and Allied Matters
+                    Act 1990 of Nigeria. With the main objective(s) of carrying out Building/Civil
+                    Engineering  Constructions, Estate Development, Project/Facility Management,
+                    Consultants,
+                    Imports and Export, Architects and General supply of goods.
+                    It is highly important to have a
+                     good foresight towards good planning for successful executions of project so as to serve Clients better and Make reasonable profit, Thus having 
+                    a good financial base with effective Management.
+                </p>
+              
+            </div>
+            <div class="col-md-5">
+                <br /><br />
+                <img class=" img-rounded marginal" src="~/Images/About-content.jpg" style="width:100%; height:300px;"  />
+            </div>
+        </div> 
+        <div class="row reset" style="background-color:white;">
+            <div class="col-md-5 col-md-offset-1 pull-left">
+               
+                <img class="img-rounded marginal" src="~/Images/About-content2.jpg" style="width:100%; height:600px;" />
+            </div>
+            <div class="col-md-5">
+               
+                <h2>Our services</h2><hr />
+                <br />
+                <p class="font2">
+                    Our management is made up of Qualified, reputable and Committed Men and Women of Diverse background, 
+                    well experienced and technically Sound in Construction as well as other services.
+                    Individually we have curved out a niche for ourselves in the area of excellence and 
+                    effectiveness in the delivery of services to both private and public sector of the economy 
+                    in the development of various project such as Industrial, Residential and General public projects.
+                    We currently render the following services:
+                    <dl class="services">
+                        @if(ViewBag.services !=null)
+                        {
+                            foreach(Midbay_NG.MyModels.Service item in ViewBag.services)
+                            {
+                                <dt>@item.Title</dt><dd>@item.Detail</dd>
+                            }
+                        }
+                        else
+                        {
+                            <dt>Coming soon</dt>
+                        }
+
+
+                    </dl>
+                </p>
+                <br /><br />
+            </div>
+          
+        </div>
+        <div class="row reset" style="background-color:white; padding-bottom:50px;">
+            <div class="col-md-5 col-md-offset-1">
+                <br />
+                <h2>Staff Welfare/HealthCare services </h2><hr />
+                <br />
+                <p class="font2">
+                    MID-BAY  Holds the above concept not only as a policy statement but as a standard practice procedure which inform
+                     the acquisition of insurance cover over these concepts upon contracts.
+                    Apart from taking contract on these headings, it is our policy and Practice upon
+                     Mobilizations to organize periodic safety workshop for our Staff and Associates to sensitize
+                     them and ensure that losses are Reduced to minimum.
+                    Such workshops include the importance of:
+                    <ul>
+                        <li> Environmental Cleaning</li>
+                        <li> Encouraging of Accident Reporting and the Sure off</li>
+                        <li> Equipment Safety</li>
+                        <li>  Reporting of third Party injury to Management Equipment and Properties</li>
+                    </ul>
+           
+                </p>
+
+            </div>
+            <div class="col-md-5">
+                <br /><br />
+                <img class="img-responsive img-rounded marginal" src="~/Images/compressed/DSC00322.JPG" />
+             
+            </div>
+        </div>
+
+    </div>
+
+</div>
+

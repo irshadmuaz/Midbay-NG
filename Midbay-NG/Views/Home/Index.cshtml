@@ -1,0 +1,366 @@
+﻿@model Midbay_NG.Repository.Enums.IndexM
+@{
+    ViewBag.Title = "MID-BAY";
+}
+
+<div class="row side1">
+  <div class="container">
+      <div class="row side2">
+          <div class="col-md-8 behind" >
+              
+              <img id="carousel1" class="img-responsive" src="~/Images/carousel2.jpg" />
+          </div>
+          <div class="col-md-4 font1 text-center ">
+            <div class="cside" id="cside">
+                <br />
+                <h3 class="text-center" style="font-weight:bolder">INTRODUCTION</h3> <hr />
+
+                <p class="width1" id="content2">
+                    MID-BAY Is an Africa-indigenous Building and Civil Engineering
+                    Construction Company, Incorporated under the Companies and Allied
+                    Matters  Act 1990 of Nigeria. With the main objective(s) of carrying
+                    out Building/Civil Engineering  Constructions, Estate Development,
+                    Project/Facility Management, Consultants,
+                    Imports and Export, Architects and General supply of goods.
+                    <br /> <br />
+                    <button type="button" class="btn-lg btn-primary">More</button>
+                </p>
+            </div>  
+              <div class="cside">
+                  <br />
+                  <h3 class="text-center" style="font-weight:bolder">IMPORT/EXPORT</h3><hr />
+
+                  <p class="width1" id="content2">
+                      MID-BAY Is an Africa-indigenous Building and Civil Engineering
+                      Construction Company, Incorporated under the Companies and Allied
+                      Matters  Act 1990 of Nigeria. With the main objective(s) of carrying
+                      out Building/Civil Engineering  Constructions, Estate Development,
+                      Project/Facility Management, Consultants,
+                      Imports and Export, Architects and General supply of goods.
+                      <br /> <br />
+                      <button type="button" class="btn-lg btn-primary">More</button>
+                  </p>
+              </div>
+              <div class="cside">
+                  <br />
+                  <h3 class="text-center" style="font-weight:bolder">CONSULTATION SERVICES</h3><hr />
+
+                  <p class="width1" id="content2">
+                      MID-BAY Is an Africa-indigenous Building and Civil Engineering
+                      Construction Company, Incorporated under the Companies and Allied
+                      Matters  Act 1990 of Nigeria. With the main objective(s) of carrying
+                      out Building/Civil Engineering  Constructions, Estate Development,
+                      Project/Facility Management, Consultants,
+                      Imports and Export, Architects and General supply of goods.
+                      <br /> <br />
+                      <button type="button" class="btn-lg btn-primary">More</button>
+                  </p>
+              </div>
+              <div class="cside" id="lastelement">
+                  <br />
+                  <h3 class="text-center" style="font-weight:bolder">BUILDING AND CIVIL ENGINEERING</h3>
+
+                  <p class="width1">
+                      MID-BAY Is an Africa-indigenous Building and Civil Engineering
+                      Construction Company, Incorporated under the Companies and Allied
+                      Matters  Act 1990 of Nigeria. With the main objective(s) of carrying
+                      out Building/Civil Engineering  Constructions, Estate Development,
+                      Project/Facility Management, Consultants,
+                      Imports and Export, Architects and General supply of goods.
+                      <br /> <br />
+                      <button type="button" class="btn-lg btn-primary">More</button>
+                  </p>
+              </div>  
+            
+
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-md-8" id="subcontent">
+              <div class="row side2" style="border-top:20px solid black;z-index:10;">
+
+                  <div class="col-md-4" style="padding:0;margin:0;">
+                      <img class="imager" src="~/Images/compressed/Image2.jpg" />
+                      <div class="row underliner">
+                          <div class="col-md-12 width2" style="padding-left:10px;">
+                          </div>
+
+                      </div>
+                  </div>
+                  <div class="col-md-4">
+                      <img class="imager" src="~/Images/compressed/Image3.jpg" />
+                      <div id="underliner-center" class="underliner" style="padding:10px;">
+                        
+                          <div class="width2 pull-right">
+                              <a class="absl btn btn-primary btn-primary" href=""> more <span class="glyphicon glyphicon-arrow-down"></span></a>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-md-4">
+                      <img class="imager" src="~/Images/compressed/Image4.jpg" />
+                      <div class=" underliner" style="padding:10px;">
+                         
+                          <div class="width2 pull-right">
+                              <a class="absl btn btn-primary btn-primary" href=""> more <span class="glyphicon glyphicon-arrow-down"></span></a>
+                              
+                          </div>
+                      </div>
+
+                  </div>
+
+
+              </div>
+              <div class="row featured">
+
+
+                  <div class="row content1 heighter" style="background-color:#2a1a0b; padding:0;">
+                      <center>
+                          <h3 style="padding:19px; border-top-right-radius:5px;border-bottom-right-radius:5px;">Featured Projects</h3>
+                      </center>
+                      <div id="theArt" style="margin-top:20px;">
+                          @foreach (var item in Model.Projects)
+                          {
+
+                              <div class="col-md-4">
+
+                                  <div class="artGroup flip">
+                                      <div class="artwork">
+                                          <img class="img-rounded" src="~/Uploads/ProjectImages/@item.Images.Split(',').First().Substring(item.Images.Split(',').First().LastIndexOf('\\') + 1)" height="364"/>
+                                          <div class="detail1">
+                                              <div class="alert" style="margin:5px auto;">
+                                                  <div class="row">
+                                                      <div>
+                                                          <center>
+                                                              <a href=@Url.Action("ViewProject", new { Id = item.Id }) class="btn btn-sm btn-info">View project</a>
+                                                          </center>
+                                                       
+                                                      </div>
+
+                                                  </div>
+                                                  <div  id="feature1" style="background:rgba(0,0,0,0.8); padding:10px; border-radius:3px;">
+                                                      <div class="row" style="margin-top:10px;">
+                                                          <div class="col-md-3">
+                                                              Location:
+                                                          </div>
+                                                          <div class="col-md-9">
+                                                              @item.Location
+                                                          </div>
+                                                      </div>
+
+                                                      <div class="row">
+                                                          <div class="col-md-3">
+                                                              Client:
+                                                          </div>
+                                                          <div class="col-md-9" style="white-space:nowrap">
+                                                              @item.Client
+                                                          </div>
+                                                      </div>
+
+                                                      <div class="row">
+                                                          <div class="col-md-3">
+                                                              Date:
+                                                          </div>
+                                                          <div class="col-md-9">
+                                                              @item.Date.Day / @item.Date.Month / @item.Date.Year
+                                                          </div>
+                                                      </div>
+
+                                                  </div>
+                                                 
+                                                
+
+
+
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+
+                              </div>
+
+                          }
+                      </div>
+                      <div class="row" style="padding:20px;">
+                          <div class="col-md-1 col-md-offset-9">
+                              <a class="btn btn-success" href=@Url.Action("Projects") style="padding:10px;">More projects <span class="glyphicon glyphicon-arrow-right"> </span></a>
+                          </div>
+                      </div>
+
+                  </div>
+
+              </div>
+          </div>
+          <div class="col-md-4" style="margin:0;padding:0;border-top:20px solid black; border-left:2px solid #41290f;">
+              <div class="pull-left events" style="background-color:#2a1a0b">
+                  <div class="title">
+                      <center>
+                          <h3>Our Services</h3>
+                      </center>
+                  </div>
+                  <div style=" width:80%; margin:0 auto">
+
+                      <dl id="ticker">
+                          @foreach (Midbay_NG.MyModels.Service item in ViewBag.Services)
+                          {
+                              <dt>@item.Title</dt>
+                              <dd>@item.Detail</dd>
+                          }
+                       
+
+                      </dl>
+                  </div>
+
+                  <div>
+                      <div class="title" style="margin-top:7px;">
+                          <center>
+                              <h3>We are consultants to</h3>
+                          </center>
+                      </div>
+                      <div style=" width:100%; margin:0 auto; ">
+                          <div style="width:80%; margin:0 auto;">
+                             
+                              <dl id="consultant">
+                                  @foreach (Midbay_NG.MyModels.Consultant item in ViewBag.Consultants)
+                                  {
+                                      <dt>@item.Name</dt>
+                                      <dd style="height:120px;padding:0; position:relative; overflow:hidden">
+                                          <div class="row">
+                                              <div class="col-md-5" style="padding-left:0;" >
+                                                  <img class="" style="width:120px; height:80px;padding:0;margin-top:15px; margin-left:20px;" src="~/Consultants/@item.Image.Substring(item.Image.LastIndexOf('\\') + 1)" />
+                                              </div>
+                                              <div class="col-md-6" style="padding:0;">
+                                                  <span style="display:block; margin-top:15px; height:80px; overflow:hidden; padding:3px;">@item.Description</span>
+                                              </div>
+                                           
+                                              
+                                          </div>
+                                      </dd>
+
+                                  }
+                                
+                                  <dt><center><a href=@Url.Action("Affiliates") class="btn btn-primary">More</a></center></dt>
+                               
+                              </dl>
+
+                           
+                          </div>
+                      </div>
+                  </div>
+
+              </div>
+             
+          </div>
+      </div>
+      
+     
+  </div>
+</div>
+<script type="text/javascript">
+    
+    $('.displayed1').mouseenter(function () {
+        $('.overlayed1').removeClass('overcome');
+        $(this).siblings().addClass("overcome").mouseleave(function () {
+            $(this).removeClass('overcome');
+        })
+    });
+    var count = 0;
+    var element = $('#cside');
+  
+    
+    setInterval(function () {
+        $('#carousel1').fadeOut(2000, function () {
+            $(this).attr("src", "../../Images/carousel" + count + ".jpg").fadeIn(300, function () {
+                count++;
+                if (count > 3)
+                {
+                            count = 0; 
+                 }
+            });
+            
+        });
+       
+    }, 10000)
+
+
+
+    $('#projects').click(
+        function () {
+            $(this).toggleClass("glyphicon-plus-sign").toggleClass('glyphicon-minus-sign');
+          
+            $('.content1').toggleClass('heighter');
+            });
+
+    var ticker = $('#ticker');
+    ticker.children().filter('dt').each(function () {
+        var dt = $(this);
+        var container = $("<div>");
+        dt.next().appendTo(container);
+        dt.prependTo(container);
+        container.appendTo(ticker);
+    });
+    ticker.css('overflow', 'hidden');
+    function animator(currentItem) {
+        var distance = currentItem.height();
+        var duration = (distance - Math.abs(parseInt(currentItem.css('marginTop')))) / 0.025;
+        currentItem.animate({ marginTop: -distance }, duration, 'linear', function () {
+            currentItem.appendTo(currentItem.parent()).css("marginTop", 0);
+            animator(currentItem.parent().children(":first"));
+        });
+    }
+    animator(ticker.children(":first"));
+
+    ticker.mouseenter(function () {
+        ticker.children().stop();
+    });
+    ticker.mouseleave(function () {
+
+        //resume animation
+        animator(ticker.children(":first"));
+    });
+
+    function effect() {
+        if ($('html').hasClass('csstransforms3d')) {
+            $('.artGroup').removeClass('slide').addClass('flip');
+          
+            $('.artGroup.flip').hover(
+                function () {
+
+                    $(this).find('.artwork').addClass('theFlip');
+                }, function () {
+                    $(this).find('.artwork').removeClass('theFlip');
+                }
+                );
+        }
+        else {
+            $('.artGroup').hover(
+
+                function () {
+                    $(this).find('.detail').stop().animate({ bottom: 0 }, 500, 'easeOutCubic');
+                    alert('flip');
+                },
+                function () {
+                    $(this).find('.detail').stop().animate({ bottom: ($(this).height() * -1) }, 500, 'easeOutCubic');
+                }
+            );
+        }
+    }
+
+    effect();
+    $('.absl').click(function()
+    {
+        event.preventDefault();
+        $(this).parent().parent().removeClass('underliner');
+        $(this).parent().parent().addClass('detailer');
+      
+        $(this).css('visibility', 'hidden');
+        $(this).parent().parent().mouseleave(function () {
+            $(this).removeClass('detailer');
+            $(this).addClass('underliner');
+            $('.absl').css('visibility', 'visible');
+        });
+
+    })
+   
+   
+
+</script>
